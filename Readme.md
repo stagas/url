@@ -17,14 +17,15 @@ yields:
 
 ```js
 {
-  hash: ""
-  host: "example.com:3000"
-  port: 3000,
-  hostname: "example.com"
-  href: "http://example.com:3000/store/shoes?sort=desc"
-  pathname: "/store/shoes"
-  protocol: "http:"
-  query: "sort=desc"
+  hash: "",
+  host: "example.com:3000",
+  port: 3000,,
+  hostname: "example.com",
+  href: "http://example.com:3000/store/shoes?sort=desc",
+  auth: null,
+  pathname: "/store/shoes",
+  protocol: "http:",
+  query: "sort=desc",
   search: "?sort=desc"
 }
 ```
