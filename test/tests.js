@@ -86,6 +86,14 @@ describe('url.parse(str)', function(){
     assert('http:' == url.protocol);
   })
 
+  it('should support .auth', function(){
+    var url = parse('http://user:passw0rd@google.com:3000/foo/bar'),
+        ur2 = parse('user@google.com');
+
+    assert('user:passw0rd' == url.auth);
+    assert(null === ur2.auth);
+  })
+
   it('should support .hostname', function(){
     var url = parse('http://google.com:3000/foo/bar');
     assert('google.com' == url.hostname);

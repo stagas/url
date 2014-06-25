@@ -1,3 +1,8 @@
+/**
+ * RegExp to retreive 'auth' portion from url.
+ */
+
+var reauth = /^([a-z]+:\/\/)?([a-z0-9_-]+:.*?)@/
 
 /**
  * Parse the given `url`.
@@ -8,10 +13,12 @@
  */
 
 exports.parse = function(url){
+  var creds = reauth.exec(url);
   var a = document.createElement('a');
   a.href = url;
   return {
     href: a.href,
+    auth: creds && creds[2],
     host: a.host || location.host,
     port: ('0' === a.port || '' === a.port) ? port(a.protocol) : a.port,
     hash: a.hash,
